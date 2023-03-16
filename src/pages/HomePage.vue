@@ -31,7 +31,7 @@ export default {
                             <th scope="col">Nome progetto</th>
                             <th scope="col">Data di completamento</th>
                             <th scope="col">Tipologia</th>
-                            <th scope="col">tecnologie</th>
+                            <th scope="col">Tecnologie</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,15 +45,13 @@ export default {
                                     :key="technology.id" class="rounded d-inline-block px-2 p-1 mt-1">{{ technology.label
                                     }}</b>
                             </td>
+                            <td class="text-end">
+                                <router-link :to="{ name: 'show', params: { id: project.id } }"
+                                    class="btn btn-primary"><font-awesome-icon icon="fa-solid fa-eye" /></router-link>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <div class="mt-3 d-flex flex-wrap justify-content-between">
-
-                    <div class="mt-5" v-for="project in projects" :key="project.id">
-                        <ProjectCard :project="project"></ProjectCard>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

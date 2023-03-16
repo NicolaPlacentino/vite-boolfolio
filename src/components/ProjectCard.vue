@@ -7,7 +7,9 @@ export default {
 
 <template>
     <div class="card" style="width: 18rem;">
-        <img v-if="project.image" :src="project.image" class="card-img-top" alt="...">
+        <div v-if="project.image">
+            <img :src="project.image" class="card-img-top" :alt="project.name">
+        </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">{{ project.name }}</li>
             <li class="list-group-item">{{ project.author }}</li>
